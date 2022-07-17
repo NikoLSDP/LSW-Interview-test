@@ -9,6 +9,8 @@ public class StateManager : MonoBehaviour
     public static StateManager instance = null;
     public GameState state;
 
+    public UIManager uIManager;
+
     #region EVENTS
     public delegate void OnGameStateChanged(GameState _state);
     public static OnGameStateChanged onGameStateChanged;
