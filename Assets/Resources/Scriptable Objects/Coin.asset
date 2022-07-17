@@ -15,4 +15,4 @@ MonoBehaviour:
   type: 1
   name: Coin
   icon: {fileID: -4986890610287934012, guid: 274d64617113287499ed1c4165d1d8f3, type: 3}
-  description: 
+  description: Used for buying stuff!

@@ -21,16 +21,18 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) Move(Vector2.left);
         if (Input.GetKey(KeyCode.D)) Move(Vector2.right);
 
-        if (_rb.velocity != Vector2.zero && !StateManager.instance.player.isMoving)
+        if (_rb.velocity != Vector2.zero)
         {
+            if (StateManager.instance.player.isMoving) return;
             StateManager.instance.player.isMoving = true;
-            StateManager.instance.player.StartWalkingAnim(true);
+            StateManager.instance.player.StartWalkingAnim();
         }
-
-        if (_rb.velocity.x <= 0.2f && _rb.velocity.y <= 0.2f && StateManager.instance.player.isMoving)
+        else
         {
+            if (!StateManager.instance.player.isMoving) return;
+
             StateManager.instance.player.isMoving = false;
-            StateManager.instance.player.StartWalkingAnim(false);
+            StateManager.instance.player.StartWalkingAnim();
         }
     }
 
