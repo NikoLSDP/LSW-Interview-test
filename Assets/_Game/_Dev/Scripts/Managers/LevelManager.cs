@@ -61,7 +61,6 @@ public class LevelManager : MonoBehaviour
     void SpawnLevel()
     {
         currentLv = Instantiate(levels[lastLevelPlayed], levelSpawner);
-        //splineManager.SetCurrentSpline();
     }
 
     public void RestartLevel()
@@ -85,6 +84,7 @@ public class LevelManager : MonoBehaviour
         {
             lastLevelPlayed = 0;
         }
+
         PlayerPrefs.SetInt("last_level", lastLevelPlayed);
         RestartScene();
         //onRestartedLevel?.Invoke();

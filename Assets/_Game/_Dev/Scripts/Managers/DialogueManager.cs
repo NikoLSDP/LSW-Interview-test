@@ -8,17 +8,38 @@ public class DialogueMessage
     public string messageTxt;
     public bool isPlayer;
 }
+
+public class Dialogue
+{
+    public DialogueSecuenceSO sequence;
+}
+
 public class DialogueManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    public static DialogueManager instance = null;
+    [SerializeField] MessageUI messageUI;
+    Dialogue _currentDialogue;
+    int _messageIndex;
 
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
+    }
+    public void StartDialogue(DialogueSecuenceSO _newSequence)
+    {
+        _messageIndex = 0;
+        _currentDialogue.sequence = _newSequence;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnDialogueMessage()
     {
+        string _messageText = _currentDialogue.sequence.messages[_messageIndex].messageTxt;
+        string _nameText = _currentDialogue.sequence.messages[_messageIndex].isPlayer ? "Player" : _currentDialogue.sequence.npcName;
 
+        messageUI.SetMessageText(_nameText, _messageText);
+        messageUI.SpawnMessage();
+        _messageIndex++;
     }
 }

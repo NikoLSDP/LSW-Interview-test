@@ -7,6 +7,8 @@ public class DialogueSecuenceSO : ScriptableObject
 {
     public DialogueMessage[] messages;
 
+    public string npcName;
+
     public Color playerTextColor, otherTextColor;
 
 }
