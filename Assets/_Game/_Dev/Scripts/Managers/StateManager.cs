@@ -11,6 +11,7 @@ public class StateManager : MonoBehaviour
 
     public UIManager uIManager;
     public PlayerController player;
+    public CameraController cameraController;
 
     #region EVENTS
     public delegate void OnGameStateChanged(GameState _state);

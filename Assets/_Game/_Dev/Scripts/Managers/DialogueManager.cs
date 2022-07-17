@@ -26,6 +26,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (instance == null) instance = this;
         else Destroy(gameObject);
+
+        _currentDialogue = new Dialogue();
     }
     public void StartDialogue(DialogueSecuenceSO _newSequence)
     {

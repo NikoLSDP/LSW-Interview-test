@@ -11,8 +11,4 @@ public class PlayerController : MonoBehaviour
     public bool isMoving;
 
     public void StartWalkingAnim() => animations.ToggleWalkingAnimation(isMoving);
-    private void OnCollisionEnter(Collision other)
-    {
-
-    }
 }
