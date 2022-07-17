@@ -641,6 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 1503688315}
   animations: {fileID: 748815861}
+  isMoving: 0
 --- !u!61 &1503688313
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -679,8 +680,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
+  m_Mass: 3
+  m_LinearDrag: 6
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -700,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 860ba775f3d45cf409573a3f94f768c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 30
 --- !u!1 &1622806507
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,8 +841,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  uIManager: {fileID: 0}
-  player: {fileID: 0}
+  uIManager: {fileID: 644153116}
+  player: {fileID: 1503688312}
 --- !u!1 &1973212637
 GameObject:
   m_ObjectHideFlags: 0

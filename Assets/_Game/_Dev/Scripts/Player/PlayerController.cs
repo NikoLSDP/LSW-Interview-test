@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] CharacterAnimations animations;
 
 
+    public bool isMoving;
+
     public void StartWalkingAnim(bool _isWalking) => animations.ToggleWalkingAnimation(_isWalking);
     private void OnCollisionEnter(Collision other)
     {
