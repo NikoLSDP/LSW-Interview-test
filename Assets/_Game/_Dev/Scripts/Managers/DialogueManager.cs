@@ -35,13 +35,31 @@ public class DialogueManager : MonoBehaviour
         _currentDialogue.sequence = _newSequence;
     }
 
-    public void SpawnDialogueMessage()
+    public bool SpawnDialogueMessage()
     {
+        string _playerName = StateManager.instance.player.PlayerName;
         string _messageText = _currentDialogue.sequence.messages[_messageIndex].messageTxt;
-        string _nameText = _currentDialogue.sequence.messages[_messageIndex].isPlayer ? "Player" : _currentDialogue.sequence.npcName;
+        string _nameText = _currentDialogue.sequence.messages[_messageIndex].isPlayer ? _playerName : _currentDialogue.sequence.npcName;
 
         messageUI.SetMessageText(_nameText, _messageText);
         messageUI.SpawnMessage();
-        _messageIndex++;
+        if (_messageIndex + 1 < _currentDialogue.sequence.messages.Length)
+        {
+            _messageIndex++;
+            return true;
+        }
+        else
+        {
+            HideLastMessage();
+            return false;
+        }
+    }
+
+    public void HideLastMessage()
+    {
+        Debug.Log("Dialogue Ended");
+        messageUI.HideMessageUI();
+        _messageIndex = 0;
+        StateManager.instance.player.ToggleTalkingState(false);
     }
 }

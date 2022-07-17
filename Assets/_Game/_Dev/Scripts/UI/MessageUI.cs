@@ -29,6 +29,12 @@ public class MessageUI : MonoBehaviour
         LeanTween.scale(gameObject, Vector2.one, 0.3f).setEaseOutBack();
     }
 
+    public void HideMessageUI()
+    {
+        LeanTween.cancel(gameObject);
+        LeanTween.scale(gameObject, Vector2.zero, 0.3f).setEaseOutQuad();
+    }
+
     public void SpeedUpMessage()
     {
         LeanTween.cancel(gameObject);

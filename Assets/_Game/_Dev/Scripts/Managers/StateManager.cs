@@ -7,7 +7,7 @@ public enum GameState { Game, Shop, Inventory }
 public class StateManager : MonoBehaviour
 {
     public static StateManager instance = null;
-    public GameState state;
+    public GameState currentState;
 
     public UIManager uIManager;
     public PlayerController player;
@@ -27,7 +27,7 @@ public class StateManager : MonoBehaviour
 
     public void ChangeGameState(GameState _newState)
     {
-        state = _newState;
+        currentState = _newState;
         onGameStateChanged?.Invoke(_newState);
     }
 

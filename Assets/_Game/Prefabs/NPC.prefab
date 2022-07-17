@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSecuenceSO: {fileID: 11400000, guid: 7a3524c27ba0930428edc03a9b7c4d22, type: 2}
   alwaysTalks: 1
+  state: 1
 --- !u!114 &2366039239906452966
 MonoBehaviour:
   m_ObjectHideFlags: 0

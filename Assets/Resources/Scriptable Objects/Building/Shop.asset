@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Shop
   m_EditorClassIdentifier: 
   buildingSprite: {fileID: 0}
-  name: Andy Shop
+  name: Blue Gravity Shop
   description: Clothing store

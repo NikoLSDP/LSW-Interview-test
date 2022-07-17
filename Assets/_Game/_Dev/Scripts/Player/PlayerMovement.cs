@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed;
+
+    public bool isTalking;
     Rigidbody2D _rb;
     Transform _tr;
 
@@ -16,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isTalking) return;
+
         if (Input.GetKey(KeyCode.W)) Move(Vector2.up);
         if (Input.GetKey(KeyCode.S)) Move(Vector2.down);
         if (Input.GetKey(KeyCode.A)) Move(Vector2.left);
