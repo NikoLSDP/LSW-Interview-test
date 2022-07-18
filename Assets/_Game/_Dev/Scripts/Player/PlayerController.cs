@@ -18,5 +18,7 @@ public class PlayerController : MonoBehaviour
 
     public void StartWalkingAnim() => animations.ToggleWalkingAnimation(isMoving);
 
+    public void MoveAnimation(int _dir) => animations.WalkingAnimation(_dir);
+
     public void ToggleTalkingState(bool _isTalking) => movement.isTalking = _isTalking;
 }

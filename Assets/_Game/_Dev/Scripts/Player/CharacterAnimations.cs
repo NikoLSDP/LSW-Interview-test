@@ -10,4 +10,9 @@ public class CharacterAnimations : MonoBehaviour
     {
         anim.SetBool("isWalking", _isWalking);
     }
+
+    public void WalkingAnimation(int _dir)
+    {
+        anim.SetInteger("walkDir", _dir);
+    }
 }
