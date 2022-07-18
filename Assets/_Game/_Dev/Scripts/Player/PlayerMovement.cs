@@ -26,6 +26,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) Move(MoveDirections.Left);
         if (Input.GetKey(KeyCode.D)) Move(MoveDirections.Right);
 
+
+        if (_rb.velocity == Vector2.zero)
+        {
+            StateManager.instance.player.MoveAnimation(0);
+
+        }
         // if (_rb.velocity != Vector2.zero)
         // {
         //     if (StateManager.instance.player.isMoving) return;

@@ -14,7 +14,7 @@ public class NPCCharacter : MonoBehaviour
     {
         if (!_startedSpeaking) return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.anyKeyDown)
         {
             _startedSpeaking = DialogueManager.instance.SpawnDialogueMessage();
 
