@@ -25,6 +25,11 @@ public class StateManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    private void Start()
+    {
+        ChangeGameState(currentState);
+    }
+
     public void ChangeGameState(GameState _newState)
     {
         currentState = _newState;
