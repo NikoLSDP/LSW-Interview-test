@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Gargement", menuName = "Scriptable Object/Gargement")]
+[CreateAssetMenu(fileName = "New Gargement", menuName = "Scriptable Objects/Gargement")]
 public class GargementSO : ScriptableObject
 {
     public ClothesType type;

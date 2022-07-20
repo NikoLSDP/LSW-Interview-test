@@ -15,11 +15,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField] CharacterAnimations animations;
     [SerializeField] string playerName;
 
+
+    #region GET & SET
     public string PlayerName
     {
         get { return playerName; }
         set { playerName = value; }
     }
+
+    public CharacterClothes Clothes
+    {
+        get { return clothes; }
+        set { clothes = value; }
+    }
+
+    #endregion
 
     public bool isMoving;
 
