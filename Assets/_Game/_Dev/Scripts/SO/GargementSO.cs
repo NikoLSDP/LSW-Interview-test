@@ -9,5 +9,6 @@ public class GargementSO : ScriptableObject
 
     public Sprite icon;
     public new string name;
+    public int price;
     public string description;
 }

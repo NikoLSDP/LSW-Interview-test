@@ -11,11 +11,25 @@ public class Gargement
     public ClothesType type;
     public Sprite icon;
     public string name;
+    public int price;
     public string description;
+    public bool isOn;
+
+    public void SetAllInfo()
+    {
+        if (gargementSO == null) return;
+
+        icon = gargementSO.icon;
+        name = gargementSO.name;
+        price = gargementSO.price;
+        description = gargementSO.description;
+    }
 }
 
 public class ClothesManager : MonoBehaviour
 {
+    public static ClothesManager instance = null;
+
     [Header("CHARACTER CLOTHES//---------------")]
     [SerializeField] Gargement headWear;
     [SerializeField] Gargement TopWear;
@@ -28,9 +42,15 @@ public class ClothesManager : MonoBehaviour
 
     public Dictionary<string, Gargement> ClothesInventory;
 
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
+    }
+
     public void SetAllClothes()
     {
-        //Usar diccionario para cargar el inventario de ropa
+        //funcion para vestir al player con la ropa que tiene guardada
     }
 
     public void WearNewGargement(Gargement _newGargement)
@@ -52,5 +72,7 @@ public class ClothesManager : MonoBehaviour
             default:
                 break;
         }
+        ClothesInventory.Add(_newGargement.name, _newGargement);
     }
+
 }
